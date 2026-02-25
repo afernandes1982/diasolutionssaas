@@ -1,29 +1,129 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta property="og:title" content="DIA Solutions AI - Gestão Completa para Agências de IA"/>
-    <meta property="og:description" content="Plataforma completa para gestão de clientes, checklists, automações e pagamentos"/>
-    <meta property="og:image" content="https://mocha-cdn.com/01983727-8a4b-757e-8bf5-6c2d413a9dd5/WhatsApp-Image-2025-06-10-at-12.15.5.png" type="image/png"/>
-    <meta property="og:url" content="https://7dlhluug4x6wc.mocha.app"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:author" content="DIA Solutions AI"/>
-    <meta property="og:site_name" content="DIA Solutions AI"/>
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:site" content="@diasolutionsai"/>
-    <meta property="twitter:title" content="DIA Solutions AI - Gestão Completa para Agências de IA"/>
-    <meta property="twitter:description" content="Plataforma completa para gestão de clientes, checklists, automações e pagamentos"/>
-    <meta property="twitter:image" content="https://mocha-cdn.com/01983727-8a4b-757e-8bf5-6c2d413a9dd5/WhatsApp-Image-2025-06-10-at-12.15.5.png" type="image/png"/>
-    <link rel="shortcut icon" href="https://mocha-cdn.com/01983727-8a4b-757e-8bf5-6c2d413a9dd5/WhatsApp-Image-2025-06-10-at-12.15.5.png" type="image/png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://mocha-cdn.com/01983727-8a4b-757e-8bf5-6c2d413a9dd5/WhatsApp-Image-2025-06-10-at-12.15.5.png" type="image/png"/>
-    <title>
-      DIA Solutions AI - Gestão Completa para Agências de IA
-    </title>
-  </head>
-  <body>
-    <div id="root">
-    </div>
-    <script type="module" src="/src/react-app/main.tsx">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestão de Contratos CSS-SP</title>
+    <!-- Tailwind via CDN for simplicity in this setup, though local install is preferred for prod -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sp: {
+                red: '#E30613',
+                dark: '#333333',
+                light: '#F5F5F5',
+                green: '#008000',
+                yellow: '#F2C94C',
+              }
+            }
+          }
+        }
+      }
     </script>
+    <style>
+      body {
+        background-color: #F5F5F5;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      /* Custom Scrollbar for tables */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+
+      /* PRINT STYLES */
+      @media print {
+        @page {
+          margin: 1cm;
+          size: landscape;
+        }
+
+        aside, header, button, .no-print {
+          display: none !important;
+        }
+
+        body, #root, .flex, .h-screen, .overflow-hidden, .overflow-y-auto {
+          display: block !important;
+          position: relative !important;
+          height: auto !important;
+          width: 100% !important;
+          overflow: visible !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        main {
+          background-color: white !important;
+          width: 100% !important;
+          display: block !important;
+        }
+
+        .shadow-sm, .shadow-md, .border {
+          box-shadow: none !important;
+          border: none !important;
+        }
+
+        table {
+          width: 100% !important;
+          display: table !important;
+        }
+        
+        thead {
+           display: table-header-group; 
+        }
+        
+        tr {
+           page-break-inside: avoid;
+        }
+
+        .recharts-responsive-container {
+            min-height: 300px !important;
+            width: 100% !important;
+        }
+        
+        body::before {
+          content: "Relatório de Gestão de Contratos - CSS/SP";
+          display: block;
+          font-weight: bold;
+          font-size: 14pt;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.93.2",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- Vite Entry Point -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
